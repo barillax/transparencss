@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<title>TransparenCSS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  	<script src="jquery.transit.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<script id="slides" type="text/template">
+		<div>
+			<div>
+				<h1 style="margin-top: 200px">Example Presentation</h1>
+				<p><small>Ori Ratner</small></p>
+				<p><small>Summer 2013</small></p>
+			</div>
+			<div>
+				<h1>Introduction</h1>
+				<ul>
+					<li>This is not a real deck</li>
+					<li>But it could be!</li>
+					<li>How about a sublist...</li>
+					<ul>
+						<li>This is my 1st bullet</li>
+						<li>This is my 2nd bullet</li>
+						<li>This is my 3rd bullet</li>
+					</ul>
+				</ul>
+				<p>Go to the next slide please...</p>
+			</div>
+			<div>
+				<h1>Another slide</h1>
+				<p><img src="http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png"></p>
+				<p>How about an image?</p>
+			</div>
+			<div>
+				<h1>Conclusion</h1>
+				<ul>
+					<li>Less text is better.</li>
+					<li>Overhead projectors are cool.</li>
+				</ul>
+				<p>Any questions?</p>
+			</div>
+		</div>
+	</script>
+
+	<div id="container">
+		<div class="slide-content-container"></div>
+		<div class="inner-shadow light"></div>
+		<div class="inner-shadow dark"></div>
+		<div class="highlight"></div>
+	</div>
+
+	<div id="projector"><div id="grabber"></div></div>
+
+	<div id="controls">
+		<button type="button" class="btn btn-left"></button>
+		<button type="button" class="btn btn-right"></button>
+		<span class="slide-number"></span>
+	</div>
+
+	<script src="slides.js" type="text/javascript"></script>
+</body>
+</html>
