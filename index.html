@@ -4,43 +4,64 @@
 	<title>TransparenCSS</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
   	<script src="jquery.transit.min.js"></script>
+  	<script src="jquery.virtual-events.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<script id="slides" type="text/template">
 		<div>
 			<div>
-				<h1 style="margin-top: 200px">Example Presentation</h1>
-				<p><small>Ori Ratner</small></p>
-				<p><small>Summer 2013</small></p>
+				<h1>The Overhead Projector</h1>
+				<p><img src="sample/projector_patent.png" height="300"></p>
+				<p><small>A Short History</small></p>
 			</div>
 			<div>
-				<h1>Introduction</h1>
+				<h1>Projection Apparatus</h1>
 				<ul>
-					<li>This is not a real deck</li>
-					<li>But it could be!</li>
-					<li>How about a sublist...</li>
+					<li>Created by Jules Duboscq in 1880</li>
+					<li>Also called a viewgraph</li>
+					<li>Used in the United States Military Academy at West Point</li>
+				</ul>
+				<p><img src="sample/duboscq.png"></p>
+				<p class="footnote">Ref: http://americanhistory.si.edu/mobilizing-minds/overhead-projectors</p>
+			</div>
+			<div>
+				<h1>Transparencies in School</h1>
+				<p>
+				<img src="sample/westpoint.jpg" width="150" style="float:right">
+				<ul>
+					<li>Developed by 3M in the 1960s</li>
+					<li>Became popular as a teaching aid due to...</li>
 					<ul>
-						<li>This is my 1st bullet</li>
-						<li>This is my 2nd bullet</li>
-						<li>This is my 3rd bullet</li>
+						<li>Technical improvements</li>
+						<li>Government funds</li>
+						<li>Advertising</li>
+						<li>Teacher experience</li>
 					</ul>
 				</ul>
-				<p>Go to the next slide please...</p>
+				</p>
 			</div>
 			<div>
-				<h1>Another slide</h1>
-				<p><img src="http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png"></p>
-				<p>How about an image?</p>
+				<h1>TransparenCSS</h1>
+				<ul>
+					<li>Developed in 2013</li>
+					<li>Technology + Nostalgia</li>
+					<li>Best in Webkit browsers</li>
+					<li>Realistic adjustable focus!</li>
+				</ul>
+				<p><img src="sample/drag.png" width="150" style="border:none; margin-top: 50px;"></p>
 			</div>
 			<div>
 				<h1>Conclusion</h1>
 				<ul>
-					<li>Less text is better.</li>
-					<li>Overhead projectors are cool.</li>
+					<li>Fork me on GitHub</li>
+					<li>Follow Pedago</li>
+					<ul>
+						<li>http://blog.pedago.com</li>
+					</ul>
 				</ul>
-				<p>Any questions?</p>
 			</div>
 		</div>
 	</script>
@@ -61,5 +82,7 @@
 	</div>
 
 	<script src="slides.js" type="text/javascript"></script>
+
+	<a href="https://github.com/barillax/transparencss"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
 </body>
 </html>

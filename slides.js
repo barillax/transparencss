@@ -16,7 +16,8 @@ $(document).ready(function() {
 				slideArray[num].clone().addClass("clean").addClass("slide-content")
 			);
 			next();
-		}).transition({
+		}).delay(100)
+		.transition({
 			delay: 250, y: 0, x: 0, rotate: Math.random()*6-3 + "deg"
 		});
 		$(".slide-number").text(currentSlide+1 + " of " + slideArray.length)
@@ -38,31 +39,18 @@ $(document).ready(function() {
 
 	var $container = $("#container");
 	var $projector = $("#projector");
-	var $slideClean = null;
-	var $slideFuzzy = null;
-	var $dragging = null;
-	var dragY = 0;
-	var projectorTop = 0;
-	$("#grabber").on("mousedown", function(e) {
-		$dragging = $(this);
-		$dragging.attr('unselectable', 'on');
-		$slideClean = $(".clean");
-		$slideFuzzy = $(".fuzzy");
 
-		dragY = e.pageY;
-		projectorTop = +$projector.css("top").slice(0,-2);
+	$("#grabber").on("vmousedown", function(e) {
+		var $dragging = $(this);
+		var $slideClean = $(".clean");
+		var $slideFuzzy = $(".fuzzy");
+		var dragY = e.pageY;
+		var projectorTop = +$projector.css("top").slice(0,-2);
 		pauseEvent(e);
 
-		$(document.body).on("mousemove", function(e) {
-			if ($dragging == null) return;
-			var diff = e.pageY - dragY;
-			diff = diff + projectorTop;
+		$dragging.attr('unselectable', 'on');
 
-			diff = Math.max(-50, Math.min(50, diff));
-
-			// Drag projector
-			$projector.css({top : diff + "px"});
-
+		var updateBlur = function(diff) {
 			// Compute offset for blur and perspective
 			diff = diff/50.0;
 			var distDiff = (diff + 1)/2.0;
@@ -77,13 +65,30 @@ $(document).ready(function() {
 
 			$container.css({"-webkit-transform": "perspective(90px) rotateX(-1deg) scale(" +scale + "," + scale + ")"});
 			$container.css({"transform": "perspective(90px) rotateX(-1deg) scale(" +scale + "," + scale + ")"});
+		}
+
+		// Throttle for mobile devices
+		if(navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+			updateBlur = _.throttle(updateBlur, 500, {leading: false});
+		}
+
+		$(document.body).on("vmousemove", function(e) {
+			if ($dragging == null) return;
+			var diff = e.pageY - dragY;
+			diff = diff + projectorTop;
+
+			diff = Math.max(-50, Math.min(50, diff));
+
+			// Drag projector
+			$projector.css({top : diff + "px"});
+
+			updateBlur(diff);
 
 			pauseEvent(e);
-		}).on("mouseup", function(e) {
+		}).on("vmouseup", function(e) {
 			$dragging.attr('unselectable', 'off');
 			$dragging = null;
-			$(this).off("mousemove");
-			$(this).off("mouseup");
+			$(this).off("vmousemove vmouseup");
 		});
 	});
 

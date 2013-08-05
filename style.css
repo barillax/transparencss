@@ -29,6 +29,23 @@ li {
 	padding-left: 5px;
 }
 
+#container a {
+	color: black;
+	text-decoration: underline;
+}
+#container a:visited, a:hover {
+	color: black;
+}
+#container .footnote {
+	font-size: 45%;
+	position: absolute;
+	bottom: 80px;
+	left: 40px;
+}
+#container img {
+	border: 1px solid;
+}
+
 /**
  * Projector
  */
@@ -131,7 +148,7 @@ li {
 	left: 20px;
 	padding: 0;
 	margin: 0;
-	font-size: 10%;
+	font-size: 15%;
 }
 .slide-number {
 	color: white;
@@ -155,12 +172,10 @@ li {
 	-webkit-user-select: none;
 	-webkit-appearance: button;
 	font-size: 3em;
-	width: 30px;
-	height: 30px;
+	width: 50px;
+	height: 50px;
 }
 .btn:hover {
-	background-color: #444;
-	border: solid 1px #444;
 	cursor: pointer;
 }
 .btn:active {
@@ -171,18 +186,18 @@ li {
 	height: 0;
 	position: absolute;
 	width: 0;
-	border: 8px solid transparent;
+	border: 12px solid transparent;
 	border-right-color: #fff;
-	top: 6px;
-	left: 1px;
+	top: 12px;
+	left: 5px;
 }
 .btn-right:after {
 	content: ' ';
 	height: 0;
 	position: absolute;
 	width: 0;
-	border: 8px solid transparent;
+	border: 12px solid transparent;
 	border-left-color: #fff;
-	top: 6px;
-	right: 1px;
+	top: 12px;
+	right: 5px;
 }
