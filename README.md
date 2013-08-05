@@ -3,6 +3,11 @@ TransparenCSS
 
 Overhead Projector Simulator in CSS. Works best in Chrome and Safari.
 
+Demo
+====
+
+http://barillax.github.io/transparencss/
+
 Usage
 =====
 
